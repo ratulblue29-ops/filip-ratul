@@ -100,7 +100,9 @@ const CreditsScreen = () => {
           </View>
           <View style={styles.premiumPackContent}>
             <View style={styles.premiumPackLeft}>
-              <Gem width={32} height={32} color="#FFD900" />
+              <View style={styles.wrapGem}>
+                <Gem width={32} height={32} color="#ffffff" />
+              </View>
               <View style={styles.premiumPackInfo}>
                 <Text style={styles.premiumPackTitle}>Pro Pack</Text>
                 <Text style={styles.premiumPackCredits}>5 Credits</Text>
@@ -109,10 +111,7 @@ const CreditsScreen = () => {
                 <Text style={styles.saveBadgeText}>Save 20%</Text>
               </View>
             </View>
-            <TouchableOpacity
-              style={styles.premiumPackButton}
-              activeOpacity={0.7}
-            >
+            <TouchableOpacity style={styles.premiumPackButton} activeOpacity={0.7}>
               <Text style={styles.premiumPackButtonText}>€8</Text>
             </TouchableOpacity>
           </View>
@@ -125,7 +124,9 @@ const CreditsScreen = () => {
           </View>
           <View style={styles.elitePackContent}>
             <View style={styles.elitePackLeft}>
-              <MedalIcon width={32} height={32} color="#000000" />
+              <View style={styles.wrapMedalIcon}>
+                <MedalIcon width={32} height={32} color="#000000" />
+              </View>
               <View style={styles.elitePackInfo}>
                 <Text style={styles.elitePackTitle}>ELITE</Text>
                 <Text style={styles.elitePackCredits}>10 Credits</Text>
@@ -139,9 +140,7 @@ const CreditsScreen = () => {
 
         {/* Earn Free Credits Section */}
         <View style={styles.dividerRow}>
-          <View style={styles.dividerLine} />
           <Text style={styles.dividerText}>Or Earn Free</Text>
-          <View style={styles.dividerLine} />
         </View>
 
         {/* Watch Videos Card */}
