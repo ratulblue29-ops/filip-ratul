@@ -56,7 +56,7 @@ const CreditsScreen = () => {
               <Text style={styles.actionButtonText}>History</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.actionButton} activeOpacity={0.7}>
-              <Gift width={20} height={20} color="#FFFFFF" />
+              <Gift width={22} height={22} color="#FFFFFF" />
             </TouchableOpacity>
           </View>
         </View>
@@ -147,7 +147,7 @@ const CreditsScreen = () => {
         <TouchableOpacity style={styles.earnCard} activeOpacity={0.7}>
           <View style={styles.earnCardLeft}>
             <View style={styles.playIconWrapper}>
-              <PlayCircleIcon width={32} height={32} color="#76C6FF" />
+              <PlayCircleIcon width={24} height={24} color="#76C6FF" />
             </View>
             <View style={styles.earnCardInfo}>
               <View style={styles.earnCardTitleRow}>
@@ -166,14 +166,14 @@ const CreditsScreen = () => {
               </Text>
             </View>
           </View>
-          <ChevronRight width={20} height={20} color="#9CA3AF" />
+          <ChevronRight width={20} height={20} color="#ffffff" />
         </TouchableOpacity>
 
         {/* Refer Colleague Card */}
         <TouchableOpacity style={styles.earnCard} activeOpacity={0.7}>
           <View style={styles.earnCardLeft}>
             <View style={styles.usersIconWrapper}>
-              <UsersAddIcon width={32} height={32} color="#34D399" />
+              <UsersAddIcon width={24} height={24} color="#34D399" />
             </View>
             <View style={styles.earnCardInfo}>
               <View style={styles.earnCardTitleRow}>
@@ -187,7 +187,7 @@ const CreditsScreen = () => {
               </Text>
             </View>
           </View>
-          <ChevronRight width={20} height={20} color="#9CA3AF" />
+          <ChevronRight width={20} height={20} color="#ffffff" />
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
