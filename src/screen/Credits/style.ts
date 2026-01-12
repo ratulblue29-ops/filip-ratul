@@ -1,0 +1,447 @@
+import { StyleSheet } from 'react-native';
+
+const COLORS = {
+  background: '#111111',
+  cardBg: '#000000',
+  cardBorder: '#374151',
+  primary: '#FFD900',
+  white: '#FFFFFF',
+  gray: '#9CA3AF',
+  darkGray: '#6B7280',
+  green: '#84CC16',
+  teal: '#10B981',
+  darkCard: '#181711',
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.background,
+    paddingBottom: 40,
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingVertical: 16,
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: 500,
+    color: COLORS.white,
+    fontFamily: 'InterDisplayMedium',
+  },
+  scrollContent: {
+    padding: 20,
+    paddingBottom: 100,
+  },
+
+  // Balance Card
+  balanceCard: {
+    backgroundColor: COLORS.cardBg,
+    borderRadius: 16,
+    padding: 24,
+    alignItems: 'center',
+    marginBottom: 32,
+    borderWidth: 1,
+    borderColor: COLORS.primary,
+  },
+  balanceLabel: {
+    fontSize: 14,
+    fontWeight: 400,
+    color: COLORS.gray,
+    fontFamily: 'InterDisplayRegular',
+    marginBottom: 12,
+  },
+  balanceAmountRow: {
+    flexDirection: 'row',
+    alignItems: 'baseline',
+    marginBottom: 24,
+  },
+  balanceNumber: {
+    fontSize: 56,
+    fontWeight: 700,
+    color: COLORS.primary,
+    fontFamily: 'InterDisplayBold',
+    marginRight: 8,
+  },
+  balanceText: {
+    fontSize: 24,
+    fontWeight: 500,
+    color: COLORS.white,
+    fontFamily: 'InterDisplayMedium',
+  },
+  actionButtonsRow: {
+    flexDirection: 'row',
+    gap: 30,
+  },
+  actionButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: COLORS.darkCard,
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: COLORS.cardBorder,
+    gap: 8,
+    flex: 1,
+  },
+  actionButtonText: {
+    fontSize: 14,
+    fontWeight: 500,
+    color: COLORS.white,
+    fontFamily: 'InterDisplayMedium',
+  },
+
+  // Section Title
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: 700,
+    color: COLORS.white,
+    fontFamily: 'InterDisplaySemiBold',
+    marginBottom: 16,
+  },
+
+  // Pack Grid
+  packGrid: {
+    flexDirection: 'row',
+    gap: 16,
+    marginBottom: 16,
+  },
+  smallPackCard: {
+    flex: 1,
+    backgroundColor: COLORS.cardBg,
+    borderRadius: 20,
+    paddingVertical: 18,
+    paddingHorizontal: 20,
+    borderWidth: 1,
+    borderColor: COLORS.primary,
+    position: 'relative',
+  },
+  clockIconWrapper: {
+    width: 40,
+    height: 40,
+    borderRadius: 45,
+    backgroundColor: 'rgba(255, 217, 0, 0.15)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  offersBadge: {
+    width: 96,
+    position: 'absolute',
+    right: 0,
+    backgroundColor: '#5A5A00',
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+    borderTopRightRadius: 20,
+    alignItems: 'center',
+  },
+  offersBadgeText: {
+    fontSize: 12,
+    fontWeight: 700,
+    color: COLORS.primary,
+    fontFamily: 'InterDisplayBold',
+  },
+  smallPackTitle: {
+    fontSize: 15,
+    fontWeight: 700,
+    color: COLORS.white,
+    fontFamily: 'InterDisplayBold',
+    textAlign: 'left'
+  },
+  starterPackButton: {
+    marginTop: 5,
+    backgroundColor: '#1A1A1A',
+    width: '100%',
+    paddingVertical: 5,
+    borderRadius: 5,
+    alignItems: 'center',
+  },
+  starterPackButtonText: {
+    fontSize: 18,
+    fontWeight: 700,
+    color: COLORS.primary,
+    fontFamily: 'InterDisplayBold',
+  },
+  seasonalPackButton: {
+    marginTop: 5,
+    backgroundColor: '#4A4A00',
+    width: '100%',
+    paddingVertical: 5,
+    borderRadius: 5,
+    alignItems: 'center',
+    borderWidth: 0.7,
+    borderColor: COLORS.primary,
+  },
+  seasonalPackButtonText: {
+    fontSize: 18,
+    fontWeight: 700,
+    color: COLORS.primary,
+    fontFamily: 'InterDisplayBold',
+  },
+  smallPackButton: {
+    backgroundColor: COLORS.primary,
+    paddingHorizontal: 32,
+    paddingVertical: 10,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: COLORS.primary,
+  },
+  smallPackButtonText: {
+    fontSize: 16,
+    fontWeight: 600,
+    color: '#000000',
+    fontFamily: 'InterDisplaySemiBold',
+  },
+
+  // Premium Pack Card
+  premiumPackCard: {
+    backgroundColor: COLORS.cardBg,
+    borderRadius: 16,
+    padding: 16,
+    marginBottom: 16,
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.1)',
+    position: 'relative',
+  },
+  popularBadge: {
+    position: 'absolute',
+    top: 12,
+    right: 12,
+    backgroundColor: COLORS.primary,
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+    borderRadius: 8,
+  },
+  popularBadgeText: {
+    fontSize: 11,
+    fontWeight: 600,
+    color: '#000000',
+    fontFamily: 'InterDisplaySemiBold',
+  },
+  premiumPackContent: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  premiumPackLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flex: 1,
+    gap: 12,
+  },
+  premiumPackInfo: {
+    flex: 1,
+  },
+  premiumPackTitle: {
+    fontSize: 18,
+    fontWeight: 600,
+    color: COLORS.white,
+    fontFamily: 'InterDisplaySemiBold',
+  },
+  premiumPackCredits: {
+    fontSize: 14,
+    fontWeight: 400,
+    color: COLORS.gray,
+    fontFamily: 'InterDisplayRegular',
+  },
+  saveBadge: {
+    backgroundColor: COLORS.green,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 6,
+  },
+  saveBadgeText: {
+    fontSize: 11,
+    fontWeight: 600,
+    color: COLORS.white,
+    fontFamily: 'InterDisplaySemiBold',
+  },
+  premiumPackButton: {
+    backgroundColor: COLORS.white,
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+    borderRadius: 10,
+  },
+  premiumPackButtonText: {
+    fontSize: 16,
+    fontWeight: 600,
+    color: '#000000',
+    fontFamily: 'InterDisplaySemiBold',
+  },
+
+  // ELITE Pack Card
+  elitePackCard: {
+    backgroundColor: COLORS.primary,
+    borderRadius: 16,
+    padding: 16,
+    marginBottom: 32,
+    position: 'relative',
+  },
+  bestValueBadge: {
+    position: 'absolute',
+    top: 12,
+    right: 12,
+    backgroundColor: '#000000',
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+    borderRadius: 8,
+  },
+  bestValueBadgeText: {
+    fontSize: 11,
+    fontWeight: 600,
+    color: COLORS.primary,
+    fontFamily: 'InterDisplaySemiBold',
+  },
+  elitePackContent: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  elitePackLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flex: 1,
+    gap: 12,
+  },
+  elitePackInfo: {
+    flex: 1,
+  },
+  elitePackTitle: {
+    fontSize: 20,
+    fontWeight: 700,
+    color: '#000000',
+    fontFamily: 'InterDisplayBold',
+  },
+  elitePackCredits: {
+    fontSize: 14,
+    fontWeight: 500,
+    color: '#000000',
+    fontFamily: 'InterDisplayMedium',
+  },
+  elitePackButton: {
+    backgroundColor: '#000000',
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+    borderRadius: 10,
+  },
+  elitePackButtonText: {
+    fontSize: 16,
+    fontWeight: 600,
+    color: COLORS.primary,
+    fontFamily: 'InterDisplaySemiBold',
+  },
+
+  // Divider
+  dividerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 24,
+  },
+  dividerLine: {
+    flex: 1,
+    height: 1,
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+  },
+  dividerText: {
+    fontSize: 14,
+    fontWeight: 400,
+    color: COLORS.darkGray,
+    fontFamily: 'InterDisplayRegular',
+    paddingHorizontal: 16,
+  },
+
+  // Earn Cards
+  earnCard: {
+    backgroundColor: COLORS.cardBg,
+    borderRadius: 16,
+    padding: 16,
+    marginBottom: 12,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.05)',
+  },
+  earnCardLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flex: 1,
+    gap: 12,
+  },
+  playIconWrapper: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: 'rgba(118, 198, 255, 0.1)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  usersIconWrapper: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: 'rgba(52, 211, 153, 0.1)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  earnCardInfo: {
+    flex: 1,
+  },
+  earnCardTitleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 8,
+    gap: 8,
+  },
+  earnCardTitle: {
+    fontSize: 16,
+    fontWeight: 500,
+    color: COLORS.white,
+    fontFamily: 'InterDisplayMedium',
+  },
+  creditBadge: {
+    backgroundColor: COLORS.primary,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 6,
+  },
+  creditBadgeText: {
+    fontSize: 11,
+    fontWeight: 600,
+    color: '#000000',
+    fontFamily: 'InterDisplaySemiBold',
+  },
+  progressBarContainer: {
+    marginBottom: 6,
+  },
+  progressBar: {
+    height: 6,
+    backgroundColor: '#1E1E1E',
+    borderRadius: 3,
+    overflow: 'hidden',
+  },
+  progressBarFill: {
+    width: '0%',
+    height: '100%',
+    backgroundColor: COLORS.primary,
+    borderRadius: 3,
+  },
+  progressText: {
+    fontSize: 12,
+    fontWeight: 400,
+    color: COLORS.gray,
+    fontFamily: 'InterDisplayRegular',
+  },
+  referSubtext: {
+    fontSize: 12,
+    fontWeight: 400,
+    color: COLORS.gray,
+    fontFamily: 'InterDisplayRegular',
+  },
+});
+
+export default styles;

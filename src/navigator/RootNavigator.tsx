@@ -4,12 +4,14 @@ import LoginScreen from '../screen/login/LoginScreen';
 import SplashScreen from '../screen/splash/SplashScreen';
 import BottomTabs from './Buttomtabs';
 import MemberShipScreen from '../screen/membership/MemberShipScreen';
+import CreditsScreen from '../screen/Credits/credits';
 
 export type RootStackParamList = {
   Splash: undefined;
   Login: undefined;
   BottomTabs: undefined;
   membership: undefined;
+  Credits: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -24,6 +26,7 @@ const RootNavigator: React.FC = () => {
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="membership" component={MemberShipScreen} />
       <Stack.Screen name="BottomTabs" component={BottomTabs} />
+      <Stack.Screen name="Credits" component={CreditsScreen} />
     </Stack.Navigator>
   );
 };

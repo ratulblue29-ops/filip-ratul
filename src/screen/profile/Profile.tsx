@@ -20,48 +20,74 @@ import {
 } from 'lucide-react-native';
 import styles from './style';
 import UserProfileIcon from '../../components/svg/UserProfileIcon';
+import { useNavigation } from '@react-navigation/native';
 
 const Profile = () => {
+  const navigation = useNavigation<any>();
   const menuItems = [
     {
       id: '1',
       label: 'Personal Information',
       icon: User,
+      onPress: () => {
+        // Personal Information
+      },
     },
     {
       id: '2',
       label: 'Credit',
       icon: Gem,
+      onPress: () => {
+        navigation.navigate('Credits');
+      },
     },
     {
       id: '3',
       label: 'My Offer',
       icon: Tag,
+      onPress: () => {
+        // Offer
+      },
     },
     {
       id: '4',
       label: 'Language',
       icon: Globe,
+      onPress: () => {
+        // Language
+      },
     },
     {
       id: '5',
       label: 'Engagement',
       icon: Heart,
+      onPress: () => {
+        // Engagement
+      },
     },
     {
       id: '6',
       label: 'Notification',
       icon: Bell,
+      onPress: () => {
+        // Notification
+      },
     },
     {
       id: '7',
       label: 'Help And Support',
       icon: UserProfileIcon,
+      onPress: () => {
+        // Help And Support
+      },
     },
     {
       id: '8',
       label: 'Term And Condition',
       icon: FileText,
+      onPress: () => {
+        // Term And Condition
+      },
     },
   ];
 
@@ -94,6 +120,7 @@ const Profile = () => {
                 key={item.id}
                 style={styles.menuItem}
                 activeOpacity={0.7}
+                onPress={item.onPress}
               >
                 <View style={styles.menuLeft}>
                   <View style={styles.iconContainer}>
