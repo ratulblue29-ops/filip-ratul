@@ -61,10 +61,6 @@ const AvailabilityScreen = () => {
     },
   ];
 
-  const handleSendOffers = () => {
-    navigation.navigate('Membership');
-  };
-
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" />
