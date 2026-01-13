@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     position: 'relative',
+    marginTop: 8,
   },
   iconContainerRed: {
     width: 28,
@@ -113,7 +114,7 @@ const styles = StyleSheet.create({
   },
   notificationTitle: {
     fontSize: 16,
-    fontWeight: 600,
+    fontWeight: 900,
     color: COLORS.white,
     fontFamily: 'InterDisplaySemiBold',
     flex: 1,
