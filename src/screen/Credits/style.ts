@@ -97,8 +97,8 @@ const styles = StyleSheet.create({
 
   // Section Title
   sectionTitle: {
-    fontSize: 18,
-    fontWeight: 700,
+    fontSize: 23,
+    fontWeight: 900,
     color: COLORS.white,
     fontFamily: 'InterDisplaySemiBold',
     marginBottom: 16,
@@ -262,13 +262,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   premiumPackTitle: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 900,
     color: COLORS.white,
     fontFamily: 'InterDisplaySemiBold',
   },
   premiumPackCredits: {
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: 700,
     color: COLORS.gray,
     fontFamily: 'InterDisplayRegular',
@@ -343,13 +343,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 900,
     color: '#000000',
-    fontFamily: 'InterDisplayBold',
+    fontFamily: 'InterDisplaySemiBold',
   },
   elitePackCredits: {
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: 900,
     color: '#000000',
-    fontFamily: 'InterDisplayBold',
+    fontFamily: 'InterDisplaySemiBold',
   },
   elitePackButton: {
     backgroundColor: '#000000',
