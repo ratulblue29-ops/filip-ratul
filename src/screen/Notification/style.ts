@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   notificationCard: {
     flexDirection: 'row',
     backgroundColor: '#1E1E1E',
-    borderRadius: 12,
+    borderRadius: 9,
     padding: 16,
     marginBottom: 12,
     borderWidth: 1,
