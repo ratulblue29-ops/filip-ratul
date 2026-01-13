@@ -60,9 +60,9 @@ const styles = StyleSheet.create({
   },
   balanceNumber: {
     fontSize: 56,
-    fontWeight: 700,
+    fontWeight: 900,
     color: COLORS.primary,
-    fontFamily: 'InterDisplayBold',
+    fontFamily: 'InterDisplayExtraBold',
     marginRight: 8,
   },
   balanceText: {

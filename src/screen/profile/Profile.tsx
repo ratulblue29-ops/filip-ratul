@@ -46,7 +46,7 @@ const Profile = () => {
       label: 'My Offer',
       icon: Tag,
       onPress: () => {
-        // Offer
+        navigation.navigate('offer');
       },
     },
     {
@@ -54,7 +54,7 @@ const Profile = () => {
       label: 'Language',
       icon: Globe,
       onPress: () => {
-        // Language
+        navigation.navigate('language');
       },
     },
     {
@@ -62,7 +62,7 @@ const Profile = () => {
       label: 'Engagement',
       icon: Heart,
       onPress: () => {
-        // Engagement
+        navigation.navigate('engagement');
       },
     },
     {
@@ -70,7 +70,7 @@ const Profile = () => {
       label: 'Notification',
       icon: Bell,
       onPress: () => {
-        // Notification
+        navigation.navigate('notification');
       },
     },
     {
@@ -78,7 +78,7 @@ const Profile = () => {
       label: 'Help And Support',
       icon: UserProfileIcon,
       onPress: () => {
-        // Help And Support
+        navigation.navigate('HelpSupport');
       },
     },
     {
@@ -86,7 +86,7 @@ const Profile = () => {
       label: 'Term And Condition',
       icon: FileText,
       onPress: () => {
-        // Term And Condition
+        navigation.navigate('TermsConditions');
       },
     },
   ];
