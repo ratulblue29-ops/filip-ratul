@@ -25,6 +25,14 @@ const styles = StyleSheet.create({
     color: COLORS.white,
     fontFamily: 'InterDisplayMedium',
   },
+  profileImage: {
+    width: 45,
+    height: 45,
+    borderRadius: 22.5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 12,
+  },
   notifDot: {
     position: 'absolute',
     top: 0,
@@ -90,6 +98,9 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 22,
   },
+  headProfile: { flexDirection: 'row', alignItems: 'center' },
+  headProfileName: { color: '#fff', fontSize: 15, fontWeight: 'bold' },
+  greetingText: { color: COLORS.textSecondary, fontSize: 15 },
   profileRow: { flexDirection: 'row', alignItems: 'center' },
   avatarCircle: {
     width: 45,

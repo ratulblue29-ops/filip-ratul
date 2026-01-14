@@ -73,7 +73,18 @@ const FeedScreen = () => {
       <StatusBar barStyle="light-content" />
       {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.title}>Find Workers</Text>
+        <View style={styles.headProfile}>
+          <View>
+            <Image
+              source={{ uri: 'https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=800' }}
+              style={styles.profileImage}
+            />
+          </View>
+          <View>
+            <Text style={styles.greetingText}>Good morning</Text>
+            <Text style={styles.headProfileName}>Daniel Martinez</Text>
+          </View>
+        </View>
         <View>
           <Bell width={24} height={24} color="white" />
           <View style={styles.notifDot} />
