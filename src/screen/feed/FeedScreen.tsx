@@ -10,6 +10,7 @@ import {
   Image,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import styles from './style';
 import { Bell, Search } from 'lucide-react-native';
 
@@ -17,8 +18,10 @@ const COLORS = {
   secondaryText: '#9E9E9E',
   yellow: '#fcd303',
 };
-const FeedScreen = () => {
-  // --- MOCK DATA ---
+
+const Drawer = createDrawerNavigator();
+
+const FeedContent = ({ navigation }: any) => {
   const RECOMMENDED_DATA = [
     {
       id: '1',
@@ -73,7 +76,11 @@ const FeedScreen = () => {
       <StatusBar barStyle="light-content" />
       {/* Header */}
       <View style={styles.header}>
-        <View style={styles.headProfile}>
+        <TouchableOpacity
+          style={styles.headProfile}
+          onPress={() => navigation.openDrawer()}
+          activeOpacity={0.7}
+        >
           <View>
             <Image
               source={{ uri: 'https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=800' }}
@@ -84,7 +91,7 @@ const FeedScreen = () => {
             <Text style={styles.greetingText}>Good morning</Text>
             <Text style={styles.headProfileName}>Daniel Martinez</Text>
           </View>
-        </View>
+        </TouchableOpacity>
         <View>
           <Bell width={24} height={24} color="white" />
           <View style={styles.notifDot} />
@@ -216,6 +223,31 @@ const FeedScreen = () => {
         ))}
       </ScrollView>
     </SafeAreaView>
+  );
+};
+
+const CustomDrawerContent = () => {
+  return (
+    <View style={styles.drawerContainer}>
+      <Text style={styles.drawerText}>drawer</Text>
+    </View>
+  );
+};
+
+const FeedScreen = () => {
+  return (
+    <Drawer.Navigator
+      drawerContent={() => <CustomDrawerContent />}
+      screenOptions={{
+        headerShown: false,
+        drawerPosition: 'left',
+        drawerType: 'front',
+        swipeEnabled: true,
+        drawerStyle: styles.drawerStyle,
+      }}
+    >
+      <Drawer.Screen name="FeedContent" component={FeedContent} />
+    </Drawer.Navigator>
   );
 };
 

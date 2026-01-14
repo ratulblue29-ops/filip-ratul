@@ -196,6 +196,23 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     marginTop: 5,
   },
+
+  // Drawer Styles
+  drawerContainer: {
+    flex: 1,
+    backgroundColor: COLORS.background,
+    padding: 20,
+  },
+  drawerText: {
+    color: COLORS.white,
+    fontSize: 18,
+    fontFamily: 'InterDisplayMedium',
+    fontWeight: 500,
+  },
+  drawerStyle: {
+    backgroundColor: COLORS.background,
+    width: 280,
+  },
 });
 
 export default styles;
