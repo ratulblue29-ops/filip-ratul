@@ -11,16 +11,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  backButton: {
-    width: 40,
-    height: 40,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  backIcon: {
-    fontSize: 24,
-    color: '#FFFFFF',
-  },
   headerTitle: {
     fontSize: 20,
     fontWeight: 500,
@@ -172,12 +162,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 16,
     gap: 6,
-  },
-  checkIconGold: {
-    fontSize: 16,
-    color: '#FFD700',
-    marginRight: 12,
-    fontWeight: 'bold',
   },
   crossIcon: {
     fontSize: 16,

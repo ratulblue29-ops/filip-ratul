@@ -12,16 +12,23 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import styles from './style';
-import { Bell, Search } from 'lucide-react-native';
+import {
+  BadgeCheck,
+  Bell,
+  Bookmark,
+  Clock,
+  Heart,
+  Search,
+} from 'lucide-react-native';
 
 const COLORS = {
   secondaryText: '#9E9E9E',
   yellow: '#fcd303',
 };
-
 const Drawer = createDrawerNavigator();
 
 const FeedContent = ({ navigation }: any) => {
+  // --- MOCK DATA ---
   const RECOMMENDED_DATA = [
     {
       id: '1',
@@ -77,19 +84,19 @@ const FeedContent = ({ navigation }: any) => {
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity
-          style={styles.headProfile}
+          style={styles.topRow}
           onPress={() => navigation.openDrawer()}
           activeOpacity={0.7}
         >
           <View>
             <Image
-              source={{ uri: 'https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=800' }}
-              style={styles.profileImage}
+              source={{ uri: 'https://i.pravatar.cc/150?u=a' }}
+              style={styles.avatar}
             />
           </View>
           <View>
-            <Text style={styles.greetingText}>Good morning</Text>
-            <Text style={styles.headProfileName}>Daniel Martinez</Text>
+            <Text style={styles.greetingText}>good morning</Text>
+            <Text style={styles.nameText}>Alex</Text>
           </View>
         </TouchableOpacity>
         <View>
@@ -97,17 +104,16 @@ const FeedContent = ({ navigation }: any) => {
           <View style={styles.notifDot} />
         </View>
       </View>
-      <ScrollView contentContainerStyle={styles.scrollContent}>
-        {/* Search Bar */}
-        <View style={styles.searchContainer}>
-          <Search width={24} height={24} color="white" />
-          <TextInput
-            placeholder="Search"
-            placeholderTextColor={COLORS.secondaryText}
-            style={styles.input}
-          />
-        </View>
-
+      {/* Search Bar */}
+      <View style={styles.searchContainer}>
+        <Search width={24} height={24} color="white" />
+        <TextInput
+          placeholder="Search"
+          placeholderTextColor={COLORS.secondaryText}
+          style={styles.input}
+        />
+      </View>
+      <ScrollView>
         <View style={styles.headerRow}>
           <Text style={styles.sectionTitle}>Recommended For You</Text>
           <TouchableOpacity>
@@ -121,13 +127,13 @@ const FeedContent = ({ navigation }: any) => {
             <ImageBackground
               source={{ uri: item.image }}
               style={styles.cardImage}
-              imageStyle={{ borderTopLeftRadius: 16, borderTopRightRadius: 16 }}
             >
-              <View style={styles.badgeContainer}>
-                <Text style={styles.badgeText}>• {item.badge}</Text>
+              <View style={styles.MainbadgeContainer}>
+                <View style={styles.badgeContainer}>
+                  <Text style={styles.badgeText}>• {item.badge}</Text>
+                </View>
+                <Heart height={24} width={24} color="white" />
               </View>
-              <Text style={styles.heartIcon}>♡</Text>
-
               <View style={styles.profileRow}>
                 <View style={styles.avatarCircle}>
                   <Text style={styles.avatarInitial}>
@@ -135,10 +141,11 @@ const FeedContent = ({ navigation }: any) => {
                   </Text>
                 </View>
                 <View>
-                  <Text style={styles.profileName}>
-                    {item.name} <Text style={{ color: COLORS.yellow }}>✓</Text>
-                  </Text>
-                  <Text style={styles.verifiedText}>Verified</Text>
+                  <Text style={styles.profileName}>{item.name}</Text>
+                  <View style={styles.verifiedContainer}>
+                    <BadgeCheck width={16} height={16} color="#FFD900" />
+                    <Text style={styles.verifiedText}>Verified</Text>
+                  </View>
                 </View>
               </View>
             </ImageBackground>
@@ -155,7 +162,7 @@ const FeedContent = ({ navigation }: any) => {
               <Text style={styles.locationText}>{item.location}</Text>
 
               <View style={styles.availabilityBox}>
-                <Text style={styles.clockIcon}>🕒</Text>
+                <Clock width={24} height={24} color="#FFD900" />
                 <View>
                   <Text style={styles.availLabel}>
                     {item.subAvailability ? 'Availability' : 'Next Available'}
@@ -183,22 +190,20 @@ const FeedContent = ({ navigation }: any) => {
         ))}
 
         {/* --- SECTION: NEWEST GIGS --- */}
-        <Text style={[styles.sectionTitle, { marginLeft: 16, marginTop: 20 }]}>
-          Newest Gigs
-        </Text>
+        <Text style={styles.sectionTitle}>Newest Gigs</Text>
 
         {GIGS_DATA.map(gig => (
           <View key={gig.id} style={styles.gigCard}>
             <View style={styles.row}>
               <Image source={{ uri: gig.avatar }} style={styles.gigAvatar} />
-              <View style={{ flex: 1, marginLeft: 12 }}>
+              <View style={styles.gigInfo}>
                 <View style={styles.rowBetween}>
                   <Text style={styles.gigTitle}>{gig.title}</Text>
-                  <Text style={styles.bookmarkIcon}>🔖</Text>
+                  <Bookmark width={24} height={24} color="#fff" />
                 </View>
-                <Text style={styles.locationText}>{gig.company}</Text>
+                <Text style={styles.locationText_gig}>{gig.company}</Text>
 
-                <View style={[styles.rowBetween, { marginTop: 10 }]}>
+                <View style={styles.rowBetween}>
                   <View style={styles.priceChip}>
                     <Text style={styles.priceChipText}>{gig.price}</Text>
                   </View>
@@ -206,12 +211,7 @@ const FeedContent = ({ navigation }: any) => {
                 </View>
 
                 {gig.tags && (
-                  <View
-                    style={[
-                      styles.tag,
-                      { alignSelf: 'flex-start', marginTop: 8 },
-                    ]}
-                  >
+                  <View style={styles.tag}>
                     <Text style={styles.tagText}>{gig.tags[0]}</Text>
                   </View>
                 )}

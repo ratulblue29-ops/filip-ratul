@@ -4,22 +4,30 @@ import LoginScreen from '../screen/login/LoginScreen';
 import SplashScreen from '../screen/splash/SplashScreen';
 import BottomTabs from './Buttomtabs';
 import MemberShipScreen from '../screen/membership/MemberShipScreen';
-import CreditsScreen from '../screen/Credits/credits';
-import offerScreen from '../screen/offer/offer';
-import languageScreen from '../screen/Language/language';
-import engagementScreen from '../screen/Engagement/Engagement';
-import NotificationScreen from '../screen/Notification/Notification';
-import HelpSupportScreen from '../screen/HelpSupport/HelpSupport';
-import TermsConditionsScreen from '../screen/TermsConditions/TermsConditions';
+import PurchaseScreen from '../screen/purchase/PurchaseScreen';
+import ChatScreen from '../screen/chat/ChatScreen';
+import ChatDetailScreen from '../screen/chat/ChatDetailScreen';
+import CreditsScreen from '../screen/credit/CreditScreen';
+import OfferScreen from '../screen/offer/OfferScreen';
+import LanguageScreen from '../screen/Language/language';
+import EngagementScreen from '../screen/Engagement/EngagementScreen';
+import NotificationScreen from '../screen/Notification/NotificationScreen';
+import HelpSupportScreen from '../screen/support/HelpSupportScreen';
+import TermsConditionsScreen from '../screen/termsCondition/TearmsConditionScreen';
 
 export type RootStackParamList = {
   Splash: undefined;
   Login: undefined;
   BottomTabs: undefined;
   membership: undefined;
-  Credits: undefined;
+  purchase: undefined;
+  Seasonal: undefined;
+  fulltime: undefined;
+  chat: undefined;
+  ChatDetailScreen: undefined;
+  credit: undefined;
   offer: undefined;
-  language: undefined;
+  language: undefined;  
   engagement: undefined;
   notification: undefined;
   HelpSupport: undefined;
@@ -37,14 +45,18 @@ const RootNavigator: React.FC = () => {
       <Stack.Screen name="Splash" component={SplashScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="membership" component={MemberShipScreen} />
-      <Stack.Screen name="BottomTabs" component={BottomTabs} />
-      <Stack.Screen name="Credits" component={CreditsScreen} />
-      <Stack.Screen name="offer" component={offerScreen} />
-      <Stack.Screen name="language" component={languageScreen} />
-      <Stack.Screen name="engagement" component={engagementScreen} />
+      <Stack.Screen name="purchase" component={PurchaseScreen} />
+      <Stack.Screen name="fulltime" component={ChatScreen} />
+      <Stack.Screen name="chat" component={ChatScreen} />
+      <Stack.Screen name="ChatDetailScreen" component={ChatDetailScreen} />
+      <Stack.Screen name="credit" component={CreditsScreen} />
+      <Stack.Screen name="offer" component={OfferScreen} />
+      <Stack.Screen name="language" component={LanguageScreen} />
+      <Stack.Screen name="engagement" component={EngagementScreen} />
       <Stack.Screen name="notification" component={NotificationScreen} />
       <Stack.Screen name="HelpSupport" component={HelpSupportScreen} />
       <Stack.Screen name="TermsConditions" component={TermsConditionsScreen} />
+      <Stack.Screen name="BottomTabs" component={BottomTabs} />
     </Stack.Navigator>
   );
 };

@@ -18,9 +18,9 @@ import {
   FileText,
   ChevronRight,
 } from 'lucide-react-native';
-import styles from './style';
 import UserProfileIcon from '../../components/svg/UserProfileIcon';
 import { useNavigation } from '@react-navigation/native';
+import styles from './style';
 
 const Profile = () => {
   const navigation = useNavigation<any>();
@@ -38,7 +38,7 @@ const Profile = () => {
       label: 'Credit',
       icon: Gem,
       onPress: () => {
-        navigation.navigate('Credits');
+        navigation.navigate('credit');
       },
     },
     {
@@ -124,7 +124,7 @@ const Profile = () => {
               >
                 <View style={styles.menuLeft}>
                   <View style={styles.iconContainer}>
-                    <IconComponent size={24} color="#FFFFFF" />
+                    <IconComponent size={22} color="#FFFFFF" />
                   </View>
                   <Text style={styles.menuLabel}>{item.label}</Text>
                 </View>

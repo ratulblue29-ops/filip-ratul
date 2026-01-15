@@ -13,6 +13,7 @@ import Worker from '../../@types/Worker.type';
 import { Bell, Search } from 'lucide-react-native';
 import SparkleIcon from '../../components/svg/SparkelIcon';
 import WorkerCard from '../../components/WorkerCard';
+import { useNavigation } from '@react-navigation/native';
 
 const COLORS = {
   secondaryText: '#9E9E9E',
@@ -60,6 +61,7 @@ const AvailabilityScreen = () => {
       image: 'https://i.pravatar.cc/150?u=elena',
     },
   ];
+  const navigator = useNavigation<any>();
 
   return (
     <SafeAreaView style={styles.container}>
@@ -72,24 +74,25 @@ const AvailabilityScreen = () => {
           <View style={styles.notifDot} />
         </View>
       </View>
-
+      {/* Search Bar */}
+      <View style={styles.searchContainer}>
+        <Search width={24} height={24} color="white" />
+        <TextInput
+          placeholder="Search"
+          placeholderTextColor={COLORS.secondaryText}
+          style={styles.input}
+        />
+      </View>
       <ScrollView contentContainerStyle={styles.scrollContent}>
-        {/* Search Bar */}
-        <View style={styles.searchContainer}>
-          <Search width={24} height={24} color="white" />
-          <TextInput
-            placeholder="Search"
-            placeholderTextColor={COLORS.secondaryText}
-            style={styles.input}
-          />
-        </View>
-
         {/* Filters */}
         <View style={styles.filterRow}>
           <TouchableOpacity style={[styles.chip, styles.activeChip]}>
             <Text style={styles.activeChipText}>Anytime</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.chip}>
+          <TouchableOpacity
+            style={styles.chip}
+            onPress={() => navigator.navigate('Seasonal')}
+          >
             <Text style={styles.chipText}>Seasonal</Text>
           </TouchableOpacity>
         </View>
