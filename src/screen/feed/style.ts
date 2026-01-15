@@ -331,6 +331,7 @@ const styles = StyleSheet.create({
   drawerStyle: {
     backgroundColor: COLORS.background,
     width: 330,
+    height: '91%',
   },
   drawerContainer: {
     flex: 1,
@@ -530,7 +531,6 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
     borderTopWidth: 1,
     borderTopColor: '#2A2A2A',
-    marginBottom: 60
   },
   footerItem: {
     flexDirection: 'row',

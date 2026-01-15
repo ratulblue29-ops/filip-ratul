@@ -382,6 +382,7 @@ const FeedScreen = () => {
         headerShown: false,
         drawerPosition: 'left',
         drawerType: 'front',
+        overlayColor: 'rgba(255, 255, 255, 0.3)',
         swipeEnabled: true,
         drawerStyle: styles.drawerStyle,
       }}
