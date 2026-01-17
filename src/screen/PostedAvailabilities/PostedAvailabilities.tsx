@@ -9,12 +9,16 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeft, Bell, ChevronRight, CookingPot, Martini, CircleSlash } from 'lucide-react-native';
 import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../navigator/RootNavigator';
 import styles from './style';
 import TrophyIcon from '../../components/svg/TrophyIcon';
 import CalendarOutlineIcon from '../../components/svg/Hcook';
 
+type NavigationProp = NativeStackNavigationProp<RootStackParamList>;
+
 const PostedAvailabilitiesScreen = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavigationProp>();
   const [activeTab, setActiveTab] = useState('all');
 
   const availabilities = [
@@ -64,6 +68,10 @@ const PostedAvailabilitiesScreen = () => {
 
   const handleGoBack = () => {
     navigation.goBack();
+  };
+
+  const handleAddNew = () => {
+    navigation.navigate('SeosonalAvailabilityCreation');
   };
 
   const getStatusStyle = (status: string) => {
@@ -212,7 +220,11 @@ const PostedAvailabilitiesScreen = () => {
         ))}
       </ScrollView>
 
-      <TouchableOpacity style={styles.addButton} activeOpacity={0.7}>
+      <TouchableOpacity 
+        style={styles.addButton} 
+        activeOpacity={0.7}
+        onPress={handleAddNew}
+      >
         <Text style={styles.addButtonText}>+ Post New</Text>
       </TouchableOpacity>
     </SafeAreaView>
