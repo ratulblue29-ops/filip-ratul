@@ -31,12 +31,16 @@ import UsersAddIcon from '../../components/svg/UsersAddIcon';
 import PlusCircleIcon from '../../components/svg/Storypost';
 import MedalIcon from '../../components/svg/MedalIcon';
 import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../navigator/RootNavigator';
 
 const COLORS = {
   secondaryText: '#9E9E9E',
   yellow: '#fcd303',
 };
 const Drawer = createDrawerNavigator();
+
+type NavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
 const FeedContent = ({ navigation }: any) => {
   const RECOMMENDED_DATA = [
@@ -232,7 +236,7 @@ const FeedContent = ({ navigation }: any) => {
 };
 
 const CustomDrawerContent = () => {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<NavigationProp>();
   const [showBanner, setShowBanner] = useState(true);
 
   return (
@@ -303,7 +307,11 @@ const CustomDrawerContent = () => {
         <View style={styles.drawerSection}>
           <Text style={styles.sectionHeader}>Professional</Text>
 
-          <TouchableOpacity style={styles.menuItem} activeOpacity={0.7}>
+          <TouchableOpacity 
+            style={styles.menuItem} 
+            activeOpacity={0.7}
+            onPress={() => navigation.navigate('postedAvailabilities')}
+          >
             <View style={styles.menuLeft}>
               <View style={styles.iconCircle}>
                 <PlusCircleIcon width={20} height={18} color="#FFF" />
