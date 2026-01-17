@@ -69,8 +69,7 @@ const OfferScreen = () => {
         </TouchableOpacity>
         <Text style={styles.title}>My offer</Text>
         <View style={styles.notificationWrapper}>
-          <Bell width={24} height={24} color="#FFFFFF" />
-          <View style={styles.notifDot} />
+          <Bell width={24} height={24} color="#ffffff00" />
         </View>
       </View>
 
