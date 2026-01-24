@@ -37,7 +37,9 @@ const TermsConditionsScreen = () => {
         <View style={{ width: 24 }} />
       </View>
 
-      <ScrollView contentContainerStyle={styles.scrollContent}>
+      <ScrollView contentContainerStyle={styles.scrollContent}
+        showsVerticalScrollIndicator={false}
+      >
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>1. Introduction</Text>
           <Text style={styles.bodyText}>
@@ -106,7 +108,9 @@ const TermsConditionsScreen = () => {
           activeOpacity={0.7}
         >
           <View style={[styles.checkbox, isChecked && styles.checkboxChecked]}>
-            {isChecked && <View style={styles.checkboxInner} /> && <Check width={20} />}
+            {isChecked && <View style={styles.checkboxInner} /> && (
+              <Check width={20} />
+            )}
           </View>
           <Text style={styles.checkboxText}>
             I acknowledge that I have read, understood, and agree to the{' '}
@@ -120,14 +124,12 @@ const TermsConditionsScreen = () => {
           activeOpacity={0.7}
           disabled={!isChecked}
         >
-          <Text style={[styles.buttonText, !isChecked && styles.buttonTextDisabled]}>
+          <Text
+            style={[styles.buttonText, !isChecked && styles.buttonTextDisabled]}
+          >
             Accept & Continue
           </Text>
-          <ArrowRight
-            width={20}
-            height={20}
-            color='#111827'
-          />
+          <ArrowRight width={20} height={20} color="#111827" />
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>

@@ -41,7 +41,9 @@ const CreditsScreen = () => {
         <View style={{ width: 24 }} />
       </View>
 
-      <ScrollView contentContainerStyle={styles.scrollContent}>
+      <ScrollView contentContainerStyle={styles.scrollContent}
+        showsVerticalScrollIndicator={false}
+      >
         {/* Total Balance Card */}
         <View style={styles.balanceCard}>
           <Text style={styles.balanceLabel}>Total Balance</Text>
@@ -72,7 +74,10 @@ const CreditsScreen = () => {
             </View>
             <Text style={styles.smallPackTitle}>Starter</Text>
             <Text style={styles.smallPackTitle}>1 Credit</Text>
-            <TouchableOpacity style={styles.starterPackButton} activeOpacity={0.7}>
+            <TouchableOpacity
+              style={styles.starterPackButton}
+              activeOpacity={0.7}
+            >
               <Text style={styles.starterPackButtonText}>€2</Text>
             </TouchableOpacity>
           </View>
@@ -87,7 +92,10 @@ const CreditsScreen = () => {
             </View>
             <Text style={styles.smallPackTitle}>Seasonal</Text>
             <Text style={styles.smallPackTitle}>Special Bundle</Text>
-            <TouchableOpacity style={styles.seasonalPackButton} activeOpacity={0.7}>
+            <TouchableOpacity
+              style={styles.seasonalPackButton}
+              activeOpacity={0.7}
+            >
               <Text style={styles.seasonalPackButtonText}>€5</Text>
             </TouchableOpacity>
           </View>
@@ -111,7 +119,10 @@ const CreditsScreen = () => {
                 <Text style={styles.saveBadgeText}>Save 20%</Text>
               </View>
             </View>
-            <TouchableOpacity style={styles.premiumPackButton} activeOpacity={0.7}>
+            <TouchableOpacity
+              style={styles.premiumPackButton}
+              activeOpacity={0.7}
+            >
               <Text style={styles.premiumPackButtonText}>€8</Text>
             </TouchableOpacity>
           </View>
@@ -132,7 +143,10 @@ const CreditsScreen = () => {
                 <Text style={styles.elitePackCredits}>10 Credits</Text>
               </View>
             </View>
-            <TouchableOpacity style={styles.elitePackButton} activeOpacity={0.7}>
+            <TouchableOpacity
+              style={styles.elitePackButton}
+              activeOpacity={0.7}
+            >
               <Text style={styles.elitePackButtonText}>€15</Text>
             </TouchableOpacity>
           </View>

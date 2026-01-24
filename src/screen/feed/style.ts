@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.background,
     paddingBottom: 100,
     paddingHorizontal: 20,
+    paddingTop: 15,
   },
   header: {
     flexDirection: 'row',
@@ -498,19 +499,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   bannerTitle: {
-    color: '#000',
+    color: '#1F2937',
     fontSize: 18,
     fontFamily: 'InterDisplayBold',
     fontWeight: 700,
-    marginBottom: 3,
+    marginBottom: 4,
+    lineHeight: 20,
   },
   bannerSubtitle: {
-    color: '#374151',
+    color: '#1F2937',
     fontSize: 14,
     fontFamily: 'InterDisplayRegular',
     fontWeight: 400,
     lineHeight: 16,
-    marginBottom: 5,
+    marginBottom: 8,
   },
   viewPlansBtn: {
     marginRight: 140,

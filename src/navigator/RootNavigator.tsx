@@ -14,12 +14,19 @@ import EngagementScreen from '../screen/Engagement/EngagementScreen';
 import NotificationScreen from '../screen/Notification/NotificationScreen';
 import HelpSupportScreen from '../screen/support/HelpSupportScreen';
 import TermsConditionsScreen from '../screen/termsCondition/TearmsConditionScreen';
-import PostedAvailabilitiesScreen from '../screen/PostedAvailabilities/PostedAvailabilities';
-import SeosonalAvailabilityCreationScreen from '../screen/SeosonalAvailabilityCreation/SeosonalAvailabilityCreation';
+import SendOfferScreen from '../screen/offer/SendOfferScreen';
+import SignUpScreen from '../screen/login/SignUpScreen';
+import ReferralScreen from '../screen/referral/ReferralScreen ';
+import SettingScreen from '../screen/profile/SettingScreen';
+import PostedAvailabilitiesScreen from '../screen/mypost/PostedAvailabilitiesScreen';
+import SeosonalAvailabilityCreation from '../screen/SeosonalAvailabilityCreation/SeosonalAvailabilityCreation';
+import ViewProfile from '../screen/profile/ViewProfileScreen';
+import RoleScreen from '../screen/profile/RoleScreen';
 
 export type RootStackParamList = {
   Splash: undefined;
   Login: undefined;
+  signup: undefined;
   BottomTabs: undefined;
   membership: undefined;
   purchase: undefined;
@@ -29,13 +36,18 @@ export type RootStackParamList = {
   ChatDetailScreen: undefined;
   credit: undefined;
   offer: undefined;
-  language: undefined;  
+  language: undefined;
   engagement: undefined;
   notification: undefined;
   HelpSupport: undefined;
   TermsConditions: undefined;
-  postedAvailabilities: undefined;
+  sendoffer: undefined;
+  referral: undefined;
+  profile: undefined;
+  postAvailabilites: undefined;
   SeosonalAvailabilityCreation: undefined;
+  viewprofile: undefined;
+  role: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -48,6 +60,7 @@ const RootNavigator: React.FC = () => {
     >
       <Stack.Screen name="Splash" component={SplashScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="signup" component={SignUpScreen} />
       <Stack.Screen name="membership" component={MemberShipScreen} />
       <Stack.Screen name="purchase" component={PurchaseScreen} />
       <Stack.Screen name="fulltime" component={ChatScreen} />
@@ -60,8 +73,13 @@ const RootNavigator: React.FC = () => {
       <Stack.Screen name="notification" component={NotificationScreen} />
       <Stack.Screen name="HelpSupport" component={HelpSupportScreen} />
       <Stack.Screen name="TermsConditions" component={TermsConditionsScreen} />
-      <Stack.Screen name="postedAvailabilities" component={PostedAvailabilitiesScreen} />
-      <Stack.Screen name="SeosonalAvailabilityCreation" component={SeosonalAvailabilityCreationScreen} />
+      <Stack.Screen name="sendoffer" component={SendOfferScreen} />
+      <Stack.Screen name="referral" component={ReferralScreen} />
+      <Stack.Screen name="profile" component={SettingScreen} />
+      <Stack.Screen name="postAvailabilites" component={PostedAvailabilitiesScreen} />
+      <Stack.Screen name="SeosonalAvailabilityCreation" component={SeosonalAvailabilityCreation} />
+      <Stack.Screen name="viewprofile" component={ViewProfile} />
+      <Stack.Screen name="role" component={RoleScreen} />
       <Stack.Screen name="BottomTabs" component={BottomTabs} />
     </Stack.Navigator>
   );

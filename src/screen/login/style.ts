@@ -2,40 +2,66 @@ import { StyleSheet } from 'react-native';
 
 const bgColor = '#111';
 const buttonColor = '#FFD900';
+const inter = 'Inter_24pt-Bold';
+const interDisplayBlack = 'InterDisplay-ExtraBold';
+const interDisplayMedium = 'InterDisplay-Medium';
+const interDisplayRegular = 'InterDisplay-Regular';
+const interDisplayThin = 'InterDisplay-Thin';
+const interDisplayBold = 'InterDisplay-Bold';
 
 const styles = StyleSheet.create({
+  signupContainer: {
+    justifyContent: 'flex-start',
+    paddingTop: 10,
+  },
   container: {
     flex: 1,
     backgroundColor: bgColor,
     paddingHorizontal: 20,
     paddingTop: 40,
-    justifyContent: 'center',
   },
-
+  SignupTittle: {
+    fontSize: 24,
+    fontWeight: 500,
+    fontFamily: interDisplayMedium,
+    textAlign: 'center',
+    marginBottom: 32,
+    color: 'white',
+  },
   title: {
     color: '#fff',
     fontSize: 32,
-    fontFamily: 'InterDisplayBold',
+    fontFamily: inter,
     fontWeight: 700,
     textAlign: 'center',
     marginBottom: 8,
   },
-
+  signDoyouHave: {
+    marginTop: 32,
+  },
   span: {
     fontStyle: 'italic',
+    fontWeight: 900,
+    fontFamily: interDisplayBlack,
   },
 
   subtext: {
     color: '#9CA3AF',
-    fontFamily: 'InterDisplayRegular',
+    fontFamily: interDisplayRegular,
+    fontWeight: 400,
     fontSize: 16,
     textAlign: 'center',
     marginBottom: 64,
   },
+  signupSubtext: {
+    fontSize: 16,
+    color: '#fff',
+  },
 
   label: {
     color: '#E5E7EB',
-    fontFamily: 'InterDisplayMedium',
+    fontFamily: interDisplayMedium,
+    fontWeight: 500,
     fontSize: 14,
     marginBottom: 8,
   },
@@ -46,7 +72,8 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     paddingHorizontal: 20,
     paddingVertical: 14,
-    fontFamily: 'InterDisplayRegular',
+    fontFamily: interDisplayThin,
+    fontWeight: 300,
     fontSize: 14,
     color: '#fff',
     marginBottom: 16,
@@ -64,7 +91,8 @@ const styles = StyleSheet.create({
   passwordInput: {
     flex: 1,
     paddingVertical: 14,
-    fontFamily: 'InterDisplayRegular',
+    fontFamily: interDisplayThin,
+    fontWeight: 300,
     fontSize: 14,
     color: '#fff',
   },
@@ -74,7 +102,7 @@ const styles = StyleSheet.create({
   },
   forgetPassText: {
     color: '#FFD900',
-    fontFamily: 'InterDisplayRegular',
+    fontFamily: interDisplayRegular,
     fontSize: 14,
     fontWeight: 400,
     textAlign: 'right',
@@ -83,9 +111,12 @@ const styles = StyleSheet.create({
   },
   loginButton: {
     color: '#1F2937',
-    fontFamily: 'InterDisplayBold',
+    fontFamily: interDisplayBold,
     fontSize: 16,
     fontWeight: 700,
+  },
+  signupBtn: {
+    marginTop: 72,
   },
   button: {
     paddingVertical: 12,
@@ -95,7 +126,8 @@ const styles = StyleSheet.create({
   },
   orContinue: {
     color: '#fff',
-    fontFamily: 'InterDisplayMedium',
+    fontFamily: interDisplayMedium,
+    fontWeight: 500,
     fontSize: 14,
   },
   lineBar: {
@@ -133,13 +165,13 @@ const styles = StyleSheet.create({
   },
   googleText: {
     color: '#fff',
-    fontFamily: 'InterDisplayMedium',
+    fontFamily: interDisplayMedium,
     fontSize: 16,
     fontWeight: 500,
   },
   dontText: {
     color: '#9CA3AF',
-    fontFamily: 'InterDisplayRegular',
+    fontFamily: interDisplayRegular,
     fontSize: 16,
     fontWeight: 400,
   },
@@ -154,6 +186,46 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: 4,
     justifyContent: 'center',
+  },
+
+  radioWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 10,
+    marginTop: 15,
+  },
+  signupWrapper: {
+    marginBottom: 16,
+  },
+  radio: {
+    width: 20,
+    height: 20,
+    borderWidth: 2,
+    borderRadius: 4,
+    borderColor: '#999',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 10,
+  },
+  radioSelected: {
+    borderColor: '#D1D5DB',
+  },
+  radioInner: {
+    width: 18,
+    height: 18,
+    borderRadius: 4,
+    backgroundColor: '#D1D5DB',
+  },
+  text: {
+    color: '#fff',
+    flex: 1,
+    fontSize: 12,
+    fontFamily: interDisplayRegular,
+    fontWeight: 400,
+    lineHeight: 16,
+  },
+  link: {
+    textDecorationLine: 'underline',
   },
 });
 

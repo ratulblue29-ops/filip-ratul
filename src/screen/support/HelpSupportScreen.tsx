@@ -101,7 +101,9 @@ const HelpSupportScreen = () => {
         <View style={{ width: 24 }} />
       </View>
 
-      <ScrollView contentContainerStyle={styles.scrollContent}>
+      <ScrollView contentContainerStyle={styles.scrollContent}
+        showsVerticalScrollIndicator={false}
+      >
         {/* Search Bar */}
         <View style={styles.searchContainer}>
           <Search width={24} height={24} color="white" />
@@ -131,7 +133,12 @@ const HelpSupportScreen = () => {
                   imageStyle={styles.topicCardImage}
                 >
                   <View style={styles.topicCardContent}>
-                    <IconComponent width={24} height={24} color="#FFD900" fill={topic.iconFill || 'none'} />
+                    <IconComponent
+                      width={24}
+                      height={24}
+                      color="#FFD900"
+                      fill={topic.iconFill || 'none'}
+                    />
                     <Text style={styles.topicCardTitle}>{topic.title}</Text>
                   </View>
                 </ImageBackground>
@@ -181,18 +188,12 @@ const HelpSupportScreen = () => {
           </Text>
 
           <View style={styles.supportButtons}>
-            <TouchableOpacity
-              style={styles.liveChatBtn}
-              activeOpacity={0.7}
-            >
+            <TouchableOpacity style={styles.liveChatBtn} activeOpacity={0.7}>
               <MessageSquareText width={20} height={20} color="#1F2937" />
               <Text style={styles.liveChatText}>Live Chat</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity
-              style={styles.emailBtn}
-              activeOpacity={0.7}
-            >
+            <TouchableOpacity style={styles.emailBtn} activeOpacity={0.7}>
               <Mail width={20} height={20} color="#ffffff" />
               <Text style={styles.emailText}>Email Support</Text>
             </TouchableOpacity>

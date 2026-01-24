@@ -1,24 +1,18 @@
 import React from 'react';
-import {
-  Text,
-  View,
-  ScrollView,
-  TextInput,
-  TouchableOpacity,
-  StatusBar,
-} from 'react-native';
+import { FlatList, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from './style';
 import Worker from '../../@types/Worker.type';
-import { Bell, Search } from 'lucide-react-native';
-import SparkleIcon from '../../components/svg/SparkelIcon';
 import WorkerCard from '../../components/WorkerCard';
 import { useNavigation } from '@react-navigation/native';
 
-const COLORS = {
-  secondaryText: '#9E9E9E',
-};
+import AvailabilityHeader from '../../components/findjob/AvailabilityHeader';
+import AvailabilityFilters from '../../components/findjob/AvailabilityFilters';
+import PremiumBanner from '../../components/findjob/PremiumBanner';
+
 const AvailabilityScreen = () => {
+  const navigation = useNavigation<any>();
+
   const workers: Worker[] = [
     {
       id: '1',
@@ -61,64 +55,33 @@ const AvailabilityScreen = () => {
       image: 'https://i.pravatar.cc/150?u=elena',
     },
   ];
-  const navigator = useNavigation<any>();
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" />
-      {/* Header */}
-      <View style={styles.header}>
-        <Text style={styles.title}>Find Workers</Text>
-        <View>
-          <Bell width={24} height={24} color="white" />
-          <View style={styles.notifDot} />
-        </View>
-      </View>
-      {/* Search Bar */}
-      <View style={styles.searchContainer}>
-        <Search width={24} height={24} color="white" />
-        <TextInput
-          placeholder="Search"
-          placeholderTextColor={COLORS.secondaryText}
-          style={styles.input}
-        />
-      </View>
-      <ScrollView contentContainerStyle={styles.scrollContent}>
-        {/* Filters */}
-        <View style={styles.filterRow}>
-          <TouchableOpacity style={[styles.chip, styles.activeChip]}>
-            <Text style={styles.activeChipText}>Anytime</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.chip}
-            onPress={() => navigator.navigate('Seasonal')}
-          >
-            <Text style={styles.chipText}>Seasonal</Text>
-          </TouchableOpacity>
-        </View>
-
-        <Text style={styles.resultsText}>32 Workers Found Nearby</Text>
-
-        {/* Worker List */}
-        {workers.map(item => (
-          <WorkerCard key={item.id} worker={item} />
-        ))}
-
-        {/* Premium Banner */}
-        <View style={styles.premiumBanner}>
-          <View style={styles.premiumIconContainer}>
-            <SparkleIcon width={24} height={24} />
-          </View>
-          <Text style={styles.premiumTitle}>Need Premium Staff?</Text>
-          <Text style={styles.premiumSub}>
-            Post A Verified Shift To Attract Our Highest-Rated Professionals
-            Instantly
-          </Text>
-          <TouchableOpacity style={styles.premiumBtn}>
-            <Text style={styles.filledBtnText}>Send Offers</Text>
-          </TouchableOpacity>
-        </View>
-      </ScrollView>
+      <AvailabilityHeader />
+      <FlatList
+        data={workers}
+        keyExtractor={item => item.id}
+        renderItem={({ item }) => (
+          <WorkerCard
+            worker={item}
+            onPress={() => navigation.navigate('sendoffer')}
+          />
+        )}
+        ListHeaderComponent={
+          <>
+            <AvailabilityFilters
+              onSeasonal={() => navigation.navigate('Seasonal')}
+            />
+          </>
+        }
+        ListFooterComponent={
+          <PremiumBanner onPress={() => navigation.navigate('sendoffer')} />
+        }
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.scrollContent}
+      />
     </SafeAreaView>
   );
 };
