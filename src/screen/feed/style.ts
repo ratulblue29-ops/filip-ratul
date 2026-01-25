@@ -233,7 +233,8 @@ const styles = StyleSheet.create({
   tagRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    marginBottom: 15,
+    marginTop: 10,
+    marginBottom: 5,
   },
   tag: {
     backgroundColor: COLORS.tagBg,
@@ -325,7 +326,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     textAlign: 'right',
     fontWeight: 400,
-    marginTop: 5,
     fontFamily: 'InterDisplayRegular',
   },
 
