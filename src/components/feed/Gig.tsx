@@ -1,62 +1,35 @@
-import { View, Text, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native';
-import React, { useEffect, useState } from 'react';
+import { View, Text, TouchableOpacity, FlatList } from 'react-native';
+import React from 'react';
 import styles from '../../screen/feed/style';
 import FeedCard from './FeedCard';
-import firestore from '@react-native-firebase/firestore';
-
-const COLORS = {
-  yellow: '#fcd303',
-};
-
 const Gig = () => {
-  const [recommendedJobs, setRecommendedJobs] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const unsubscribe = firestore()
-      .collection('jobs')
-      .where('status', '==', 'open')
-      .limit(2) 
-      .onSnapshot(
-        snapshot => {
-          const jobsData = snapshot.docs.map(doc => {
-            const data = doc.data();
-            
-            return {
-              id: doc.id,
-              name: data.title || 'N/A',
-              role: data.type || 'N/A',
-              rate: `€${data.rate?.hourlyRate || 0}`,
-              location: `${data.location?.city || 'Location'} • 3.1 Mi`,
-              badge: data.spotsLeft > 0 ? `${data.spotsLeft} Spots Left` : 'Full',
-              availability: formatAvailability(data.schedule),
-              tags: data.requiredSkills || [],
-              image: data.bgImage || 'No image',
-            };
-          });
-          setRecommendedJobs(jobsData);
-          setLoading(false);
-        },
-        error => {
-          console.error('Error fetching recommended jobs:', error);
-          setLoading(false);
-        }
-      );
-
-    return () => unsubscribe();
-  }, []);
-
-  const formatAvailability = (schedule: any) => {
-    if (!schedule) return 'Flexible';
-    
-    const date = new Date(schedule.date);
-    const options: Intl.DateTimeFormatOptions = {
-      month: 'short',
-      day: 'numeric',
-    };
-    return `${date.toLocaleDateString('en-US', options)} • ${schedule.startTime} - ${schedule.endTime}`;
-  };
-
+  const RECOMMENDED_DATA = [
+    {
+      id: '1',
+      name: 'Micheal J.',
+      role: 'Event Server',
+      rate: '€25',
+      location: 'SoHo, New York • 0.5 Mil',
+      badge: 'Starts In 2 Hours',
+      availability: 'Today, 6:00 PM - 2:00 AM',
+      tags: ['Weddings', 'Vip Service'],
+      image:
+        'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=800',
+    },
+    {
+      id: '2',
+      name: 'Sarah J.',
+      role: 'Bartender Assistance',
+      rate: '$35',
+      location: 'Zinc Lounge • 5 Mil',
+      badge: 'Seasonal',
+      availability: 'Nov 15 - Jan 05',
+      subAvailability: 'Flexible Weekends',
+      tags: ['Inventory', 'Mixology Basic'],
+      image:
+        'https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=800',
+    },
+  ];
   return (
     <View>
       <View style={styles.headerRow}>
@@ -66,23 +39,12 @@ const Gig = () => {
         </TouchableOpacity>
       </View>
 
-      {loading ? (
-        <View style={{ paddingVertical: 20, alignItems: 'center' }}>
-          <ActivityIndicator size="small" color={COLORS.yellow} />
-        </View>
-      ) : (
-        <FlatList
-          data={recommendedJobs}
-          keyExtractor={item => item.id}
-          renderItem={({ item }) => <FeedCard item={item} />}
-          showsVerticalScrollIndicator={false}
-          ListEmptyComponent={
-            <Text style={{ color: '#9E9E9E', textAlign: 'center', paddingVertical: 20 }}>
-              No recommended jobs available
-            </Text>
-          }
-        />
-      )}
+      <FlatList
+        data={RECOMMENDED_DATA}
+        keyExtractor={item => item.id}
+        renderItem={({ item }) => <FeedCard item={item} />}
+        showsVerticalScrollIndicator={false}
+      />
 
       <Text style={styles.sectionTitle}>Newest Availabilities</Text>
     </View>
