@@ -109,7 +109,7 @@ const FeedContent = ({ navigation }: any) => {
             <View style={styles.gigCard}>
               <View style={styles.row}>
                 <Image
-                  source={{ uri: 'https://i.pravatar.cc/150?u=' + gig.id }}
+                  source={{ uri: gig.imageUrl || 'No image' + gig.id }}
                   style={styles.gigAvatar}
                 />
 
